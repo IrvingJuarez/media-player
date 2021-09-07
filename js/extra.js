@@ -1,28 +1,12 @@
-// const counter = {
-//     count: 4
-// }
-
-function makeCounter(n){
-    count = n
-
-    return {
-        increase: function(){
-            count += 1
-        },
-        decrease: function(){
-            count -= 1
-        },
-        getCount: function(){
-            return count
-        }
-    }
+let person = {
+    name: "Irving",
+    lastName: "Juarez",
+    location: "Mexico"
 }
 
-let counter = makeCounter(7)
-console.log(counter.getCount())
+function greetings(){
+    console.log(`Hi, my name is ${this.name} and I live in ${this.location}`)
+}
 
-counter.increase()
-console.log(counter.getCount())
-
-counter.decrease()
-console.log(counter.getCount())
+const personGreeting = greetings.bind(person)
+personGreeting()
